@@ -1,15 +1,8 @@
 #tasklist{
-    margin: 20px;
-    display: flex;
+    // margin: 20px;
+    // display: flex;
     // border: solid 1px black;
     align-items: center;
-}
-#taskdetail{
-    margin-left: 10px;
-    align-items: center;
-    flex-grow:1;
-    display: flex;
-    justify-content: space-between;
 }
 .checkicon{
     font-size: 40px;
@@ -17,9 +10,6 @@
 .completed{
     cursor:context-menu;
     color: rgb(54, 201, 59);
-}
-.panding{
-    color: gray;
 }
 .completed:hover{
     cursor: pointer;

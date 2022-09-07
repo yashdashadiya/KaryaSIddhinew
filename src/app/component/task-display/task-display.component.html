@@ -1,0 +1,15 @@
+<div id="tasklist">
+<span *ngIf="task.status">
+    <span class="material-icons checkicon completed" (click)="markAsComplete()">check_circle_outline</span>
+</span>
+<span id="taskdetail">
+        <span style="width: 20%;"> {{task.title}}</span>
+        <span style="width: 35%;text-align: justify;">{{task.description}}</span>
+
+                <span style="width: 15%;">{{task.dueDate | date:'dd MMM yyyy'}}</span>
+    <span [ngSwitch]="task.priority">
+        <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
+        <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
+        <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
+    </span>
+</span></div>

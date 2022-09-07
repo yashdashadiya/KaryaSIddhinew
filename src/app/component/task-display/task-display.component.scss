@@ -1,0 +1,45 @@
+#tasklist{
+    margin: 20px;
+    display: flex;
+    // border: solid 1px black;
+    align-items: center;
+}
+#taskdetail{
+    margin-left: 10px;
+    align-items: center;
+    flex-grow:1;
+    display: flex;
+    justify-content: space-between;
+}
+.checkicon{
+    font-size: 40px;
+}
+.completed{
+    cursor:context-menu;
+    color: rgb(54, 201, 59);
+}
+.panding{
+    color: gray;
+}
+.completed:hover{
+    cursor: pointer;
+    color: rgb(57, 232, 63);
+}
+.downward{
+    transform: rotate(90deg);
+}
+.upward{
+    transform: rotate(270deg);
+}
+.centertext{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+.icon{
+    margin: 10px;
+    font-size: 40px;
+    color: rgb(54, 201, 59);
+    cursor: pointer;
+
+}

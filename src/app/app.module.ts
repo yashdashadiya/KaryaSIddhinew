@@ -15,6 +15,7 @@ import { SideBarStatusService } from './sidebar-status.service';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskServiceService } from './task-service.service';
+import { TaskDisplayComponent } from './component/task-display/task-display.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { TaskServiceService } from './task-service.service';
     SideBarComponent,
     HomePage,
     TaskPage, 
-    FooterComponent
+    FooterComponent, TaskDisplayComponent
   ],
   imports: [
     BrowserModule,

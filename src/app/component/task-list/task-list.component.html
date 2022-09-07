@@ -1,34 +1,7 @@
 
 <div  class="centertext" >{{TaskType}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
 <div *ngFor="let task of filterByAge" id="tasklist">
-    <span *ngIf=task.status>
-        <span class="material-icons checkicon completed" (click)="markAsComplete(task.id)">check_circle_outline</span>
-    </span>
-
-    <!-- <span *ngIf=!task.status>
-        <span class="material-icons checkicon panding">check_circle_outline</span>
-    </span> -->
-    <!-- <div id="justify"> -->
-    <span id="taskdetail">
-            <span style="width: 20%;"> {{task.title}}</span>
-            <span style="width: 35%;text-align: justify;">{{task.description}}</span>
-
-                    <span style="width: 15%;">{{task.dueDate | date:'dd MMM yyyy'}}</span>
-        <!-- </div> -->
-        <span [ngSwitch]="task.priority">
-            <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
-            <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
-            <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
-    
-            <!-- <span *ngSwitchCase=3 class="material-icons checkicon completed downward">arrow_downward </span>
-            <span *ngSwitchCase=1 class="material-icons checkicon completed upward">arrow_upward</span> -->
-            <!-- <span class="material-icons checkicon">arrow_upward</span> -->
-        </span>
-
-
-    </span>
-
-
+    <app-task-display  [task]="task" (markAsCompleteEvent)="markAsComplete(task.id)"></app-task-display>
 </div>
 
 <!-- new task page -->

@@ -1,0 +1,24 @@
+<!-- <app-nav-bar (sideBarStatus)="changStatusOfSideBar()" ></app-nav-bar> -->
+<app-nav-bar ></app-nav-bar>
+
+<div >
+    <div *ngIf="sideBarStatus">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div id="pages">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+<!-- <app-nav-bar></app-nav-bar>
+<div style="display:inline;">
+    <div style="width:200px ;">
+    <app-side-bar></app-side-bar>
+</div>
+<div style="width:clac(100% - 200px) ;">
+<router-outlet></router-outlet>
+</div>
+</div> -->
+<!-- <app-task-display></app-task-display> -->
+<!-- <div>app.componen.html works</div> -->

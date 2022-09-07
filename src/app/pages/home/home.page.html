@@ -1,0 +1,33 @@
+<div id="homepage">
+    <div id="Dashboard">Dashboard</div>
+    <div style="text-align: center;padding: 10px;">{{dateToday | date:'EEEE'}}, {{dateToday | date:'dd MMM yyyy'}}</div>
+    <div style="font-size: 40px;text-align: center;">{{message}}, yash</div>
+
+    <div style="display:flex;justify-content:center;margin: 30px;">
+        <div style="display: flex;justify-content:space-between;">
+            <div class="centertext">
+                <span>This Week</span>
+                <span class="material-icons">arrow_drop_down</span>
+            </div>
+            <div class="centertext">
+                <span class="material-icons completed">check_circle_outline</span>
+                <span style="font-size:25px">{{totalCompletedTask}}</span>
+                <span> Tasks completed</span>
+            </div>
+            <div class="centertext">
+                <span class="material-icons completed">task_alt</span>
+                <span style="font-size:25px">{{totalTaks}}</span>
+                <span>Tasks assigned</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:50px;">
+
+    </div>
+    <app-task-list [TaskList]="list" TaskType="My Priorities (next 3 days – high priority)" (addNewTask)="AddNewTask($event)" (updateStatus)="updateStatus($event)"></app-task-list>
+</div>
+<app-footer></app-footer>
+
+<!-- new task form -->
+

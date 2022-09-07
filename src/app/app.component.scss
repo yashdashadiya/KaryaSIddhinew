@@ -1,0 +1,11 @@
+#pages{
+    flex-grow: 1;
+    max-height: calc(100vh - 106px);
+    overflow:auto;
+}
+@media screen and (max-width:930px){
+    #pages{
+        overflow: visible;
+    }
+    
+}

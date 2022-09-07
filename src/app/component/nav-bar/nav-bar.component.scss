@@ -1,0 +1,15 @@
+nav{
+    border-bottom: solid rgb(34,88,132);
+    background-color: rgb(3,77 , 102);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+nav i{cursor:pointer;
+    padding:10px 15px;
+    padding-right: 25px;
+}
+nav span,i{
+    font-size: 35px;
+    color: white;
+}

@@ -1,0 +1,92 @@
+#tasklist{
+    margin: 20px;
+    display: flex;
+    // border: solid 1px black;
+    align-items: center;
+}
+#taskdetail{
+    margin-left: 10px;
+    align-items: center;
+    flex-grow:1;
+    display: flex;
+    justify-content: space-between;
+}
+.checkicon{
+    font-size: 40px;
+}
+.completed{
+    cursor:context-menu;
+    color: rgb(54, 201, 59);
+}
+.panding{
+    color: gray;
+}
+.completed:hover{
+    cursor: pointer;
+    color: rgb(57, 232, 63);
+}
+.downward{
+    transform: rotate(90deg);
+}
+.upward{
+    transform: rotate(270deg);
+}
+.centertext{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+.icon{
+    margin: 10px;
+    font-size: 40px;
+    color: rgb(54, 201, 59);
+    cursor: pointer;
+
+}
+
+// new task page
+#newTaskPage{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.142);
+    position:absolute;
+    top:0px;
+    left: 0px;
+}
+#newTaskForm{
+    border: 2px solid rgb(170, 170, 170);
+    box-sizing: border-box;
+    background-color: white;
+    padding:30px;
+    width:700px;
+}
+#newTaskForm input,#newTaskForm select,label{
+    margin: 10px 0px;
+}
+#newTaskForm input,#newTaskForm select{
+    width: 100%;
+    padding:5px;
+    margin-bottom:20px;
+}
+#btncontainer{
+    float: right;
+}
+.btn{
+    color: white;
+    cursor:pointer;
+   justify-content: center;
+    align-items: center;
+    background-color: rgb(68,114,196);
+    border: solid 1px rgb(30, 52, 91);
+    width:130px;
+    height: 40px;
+    margin: 5px;
+}
+.open{
+    display: flex;
+}
+.close{
+    display: none;
+}

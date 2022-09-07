@@ -1,0 +1,69 @@
+
+<div  class="centertext" >{{TaskType}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
+<div *ngFor="let task of filterByAge" id="tasklist">
+    <span *ngIf=task.status>
+        <span class="material-icons checkicon completed" (click)="markAsComplete(task.id)">check_circle_outline</span>
+    </span>
+
+    <!-- <span *ngIf=!task.status>
+        <span class="material-icons checkicon panding">check_circle_outline</span>
+    </span> -->
+    <!-- <div id="justify"> -->
+    <span id="taskdetail">
+            <span style="width: 20%;"> {{task.title}}</span>
+            <span style="width: 35%;text-align: justify;">{{task.description}}</span>
+
+                    <span style="width: 15%;">{{task.dueDate | date:'dd MMM yyyy'}}</span>
+        <!-- </div> -->
+        <span [ngSwitch]="task.priority">
+            <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
+            <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
+            <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
+    
+            <!-- <span *ngSwitchCase=3 class="material-icons checkicon completed downward">arrow_downward </span>
+            <span *ngSwitchCase=1 class="material-icons checkicon completed upward">arrow_upward</span> -->
+            <!-- <span class="material-icons checkicon">arrow_upward</span> -->
+        </span>
+
+
+    </span>
+
+
+</div>
+
+<!-- new task page -->
+<div id="newTaskPage" [ngClass]="formStatus">
+    <div id="newTaskForm">
+        <div style="font-size: 20px;">New Task</div>
+        <br>
+        <hr style="margin-bottom:10px ;">
+        
+        <form action="" >
+            <label for="title">Title</label>
+            <br>
+            <input type="text" id="title" name="title" [(ngModel)]="taskTitle">
+            <br>
+            <label for="description">Description</label>
+            <br>
+            <input type="text" id="description" name="title" [(ngModel)]="taskDescription">
+            <br>
+            <label for="priority">Priority</label>
+            <br>
+            <select id="priority" name="title" [(ngModel)]="taskPriority">
+                <option value="1">High</option>
+                <option value="2">Medium</option>
+                <option value="3">Low</option>
+            <br>
+            </select>
+            <br>
+            <label for="due">Due</label >
+            <br>
+            <input type="date" id="due" name="title" [(ngModel)]="taskDue">
+            
+        </form>
+        <div id="btncontainer">
+            <button class="btn" (click)="generateTask()">Save</button>
+            <button class="btn" (click)="closeTaskPage()">close</button>
+        </div>
+    </div>
+</div>

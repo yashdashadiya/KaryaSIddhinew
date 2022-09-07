@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit {
   }
 
   generateTask() {
-    debugger;
+    // debugger;
     // obj:TaskModel=new TaskModel(this.taskTitle,this.taskDescription,this.taskDue,true,this.taskPriority);
     this.addNewTask.emit({
       title: this.taskTitle,

@@ -1,10 +1,10 @@
 <div id="homepage">
     <div id="Dashboard">Dashboard</div>
     <div style="text-align: center;padding: 10px;">{{dateToday | date:'EEEE'}}, {{dateToday | date:'dd MMM yyyy'}}</div>
-    <div style="font-size: 40px;text-align: center;">{{message}}, yash</div>
+    <div id="message">{{message}}, yash</div>
 
-    <div style="display:flex;justify-content:center;margin: 30px;">
-        <div style="display: flex;justify-content:space-between;">
+    <div id="taskSummaryContainer">
+        <div id="taskSummary">
             <div class="centertext">
                 <span>This Week</span>
                 <span class="material-icons">arrow_drop_down</span>
@@ -25,9 +25,7 @@
     <div style="margin-top:50px;">
 
     </div>
-    <app-task-list [TaskList]="list" TaskType="My Priorities (next 3 days – high priority)" (addNewTask)="AddNewTask($event)" (updateStatus)="updateStatus($event)"></app-task-list>
+    <app-task-list [TaskList]="filterByStatus" TaskType="My Priorities (next 3 days – high priority)"
+        (addNewTask)="AddNewTask($event)" (updateStatus)="updateStatus($event)"></app-task-list>
 </div>
 <app-footer></app-footer>
-
-<!-- new task form -->
-

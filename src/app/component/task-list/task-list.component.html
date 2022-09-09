@@ -1,8 +1,10 @@
-
-<div  class="centertext" >{{TaskType}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
-<div *ngFor="let task of filterByAge" id="tasklist">
-    <app-task-display  [task]="task" (markAsCompleteEvent)="markAsComplete(task.id)"></app-task-display>
+<div id="tasklistcontainer">
+    <div class="centertext">{{TaskType}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
+    <div *ngFor="let task of TaskList" id="tasklist">
+        <app-task-display [task]="task" (markAsCompleteEvent)="markAsComplete(task.id)"></app-task-display>
+    </div>
 </div>
+
 
 <!-- new task page -->
 <div id="newTaskPage" [ngClass]="formStatus">
@@ -10,8 +12,8 @@
         <div style="font-size: 20px;">New Task</div>
         <br>
         <hr style="margin-bottom:10px ;">
-        
-        <form action="" >
+
+        <form action="">
             <label for="title">Title</label>
             <br>
             <input type="text" id="title" name="title" [(ngModel)]="taskTitle">
@@ -26,13 +28,12 @@
                 <option value="1">High</option>
                 <option value="2">Medium</option>
                 <option value="3">Low</option>
-            <br>
+                <br>
             </select>
             <br>
-            <label for="due">Due</label >
+            <label for="due">Due</label>
             <br>
             <input type="date" id="due" name="title" [(ngModel)]="taskDue">
-            
         </form>
         <div id="btncontainer">
             <button class="btn" (click)="generateTask()">Save</button>

@@ -1,8 +1,7 @@
 <div class="sidebar">
-    
-    <span routerLink="/home" [queryParams]="{sideBarStatus: true}">Home</span>
-    <!-- <div [router-link]="['/home'],{sideBarStatus:true}">Home</div> -->
-    
-    <span routerLink="/task">My Task</span>
+
+    <span routerLink="/home" id="homebutton" (click)="homeSelected()" [ngClass]="homePage">Home</span>
+    <span routerLink="/task" id="mytaskbutton" (click)="mytaskSelected()" [ngClass]="myTaskPage">My Task</span>
     <span id="bottom">Help</span>
+
 </div>

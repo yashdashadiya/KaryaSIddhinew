@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { mockTasks } from 'src/app/mock-task';
 import { TaskModel } from 'src/app/model/task';
-import { FormBuilder, FormGroup } from '@angular/forms';
-// import { CommonModule,NgSwitch } from '@angular/common';
-// import { mockTasks } from '../mock-task';
 
 @Component({
   selector: 'app-task-list',
@@ -11,29 +8,29 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
+  // <-- inputs and outputs -->
+  @Input() TaskType?: String;
+  @Input() TaskList?: TaskModel[];
+  @Output() addNewTask: EventEmitter<any> = new EventEmitter<any>();
+  @Output() updateStatus: EventEmitter<any> = new EventEmitter<any>();
+
+  // <-- variables -->
   formStatus: String = "close";
-  taskTitle?: String ;
+  taskTitle?: String;
   taskDescription?: String;
   taskDue?: Date;
   taskPriority?: number;
-  @Input() TaskType?:String;
-  @Input() TaskList?:TaskModel[];
-  @Output() addNewTask:EventEmitter<any>=new EventEmitter<any>();
-  @Output() updateStatus:EventEmitter<any>=new EventEmitter<any>();
-  mockTasks=mockTasks;
+  mockTasks = mockTasks;
 
-  constructor() { 
-}
+  // <-- constructor -->
+  constructor() {
+  }
+
+  //<-- functions -->
   ngOnInit(): void {
-
-    // TaskType=this.TaskType;
-    // this.mockT.push(this.obj);
-
   }
 
   generateTask() {
-    // debugger;
-    // obj:TaskModel=new TaskModel(this.taskTitle,this.taskDescription,this.taskDue,true,this.taskPriority);
     this.addNewTask.emit({
       title: this.taskTitle,
       dueDate: this.taskDue,
@@ -41,17 +38,9 @@ export class TaskListComponent implements OnInit {
       priority: this.taskPriority,
       description: this.taskDescription
     });
-    // console.log(this.taskTitle);
-    // console.log(this.taskDescription);
-    // console.log(this.taskDue);
-    // console.log(this.taskPriority);
-    // this.taskDue = new Date("2019 08 04") ;
-    // this.taskTitle = '';
-    // this.taskDescription = '';
-    // this.taskPriority = 3;
     this.closeTaskPage()
-    
   }
+
   closeTaskPage() {
     this.taskDue = undefined;
     this.taskPriority = undefined;
@@ -59,20 +48,17 @@ export class TaskListComponent implements OnInit {
     this.taskTitle = undefined;
     this.formStatus = "close";
   }
-  
-  openTaskPage(){
-    console.log("statusbar open");
-    this.formStatus="open";
+
+  openTaskPage() {
+    this.formStatus = "open";
   }
-  markAsComplete(id:any){
+
+  markAsComplete(id: any) {
     this.updateStatus.emit(id);
   }
 
-  get filterByAge() {
-    return this.TaskList!.filter( x => x.status);
+  // getter
+  get filterByStatus() {
+    return this.TaskList!.filter(x => x.status);
   }
-  // public addTask(obj:any){
-  //   const tasklist=JSON.parse(localStorage.getItem("TaskList")!);
-  //   tasklist.push(obj);
-  // }
 }

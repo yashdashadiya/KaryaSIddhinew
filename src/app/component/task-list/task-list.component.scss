@@ -1,7 +1,7 @@
+#tasklistcontainer{
+    margin-bottom: 20px;
+}
 #tasklist{
-    // margin: 20px;
-    // display: flex;
-    // border: solid 1px black;
     align-items: center;
 }
 .checkicon{
@@ -22,16 +22,21 @@
     transform: rotate(270deg);
 }
 .centertext{
-    margin: 20px;
+    font-size: 22px;
+    margin: 5px;
+    margin-bottom: 0px;
     display: flex;
     align-items: center;
 }
 .icon{
     margin: 10px;
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(54, 201, 59);
     cursor: pointer;
-
+}
+.icon:hover
+{
+    color: rgb(57, 232, 63);
 }
 
 // new task page

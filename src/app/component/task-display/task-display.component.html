@@ -1,16 +1,38 @@
 <div id="tasklist">
-<span *ngIf="task.status">
-    <span class="material-icons checkicon completed" (click)="markAsComplete()">check_circle_outline</span>
-</span>
-<span id="taskdetail">
+
+    <span *ngIf="task.status" class="checkCircle">
+        <span class="material-icons checkicon pending" (click)="markAsComplete()">check_circle_outline</span>
+    </span>
+    
+    <span *ngIf="!task.status" class="checkCircle">
+        <span class="material-icons checkicon completed" (click)="markAsComplete()">check_circle_outline</span>
+    </span>
+
+    <!-- {{task.dueDate | date:'dd MMM yyyy'}} -->
+    <!-- <span id="taskdetail">
+        <span id="taskdetails">
+            <div id="tasktitle"> {{task.title}}</div>
+            <div id="taskdescription">{{task.description}}</div>
+        </span>
+        
+        <span id="datepriority">
+            <div id="taskdate">{{date}}</div>
+            <div [ngSwitch]="task.priority" id="taskpriority">
+                <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
+                <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
+                <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
+            </div>
+        </span>
+    </span> -->
+    <span id="taskdetail">
         <span style="width: 20%;"> {{task.title}}</span>
         <span style="width: 35%;text-align: justify;">{{task.description}}</span>
 
-                <span style="width: 15%;">{{date}}</span>
-                    <!-- {{task.dueDate | date:'dd MMM yyyy'}} -->
-    <span [ngSwitch]="task.priority">
-        <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
-        <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
-        <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
+        <span style="width: 15%;min-width: fit-content;">{{date}}</span>
+        <span [ngSwitch]="task.priority">
+            <span *ngSwitchCase=2 class="material-icons checkicon right">arrow_right_alt</span>
+            <span *ngSwitchCase=3 class="material-icons checkicon downward">arrow_right_alt </span>
+            <span *ngSwitchCase=1 class="material-icons checkicon upward">arrow_right_alt</span>
+        </span>
     </span>
-</span></div>
+</div>

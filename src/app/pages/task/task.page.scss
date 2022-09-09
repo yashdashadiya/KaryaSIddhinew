@@ -1,0 +1,28 @@
+#TaskPage{
+    margin: 10px;
+}
+#myTask{
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+#deopdownContainer{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+    float: right;
+}
+#deopdownContainer div{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+#selectbox{
+    font-size: medium;
+    padding: 10px;
+    border: none;
+}
+#selectbox:focus{
+    outline: none;
+}

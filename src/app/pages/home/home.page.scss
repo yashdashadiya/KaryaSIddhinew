@@ -1,6 +1,5 @@
 #homepage{
     margin: 15px;
-    // overflow:auto;width:calc(100vh - );
 }
 #Dashboard{
     font-size: 25px;
@@ -8,12 +7,37 @@
 .completed{
     color: rgb(54, 201, 59);
 }
-
-
+#taskSummaryContainer{
+    display:flex;
+    justify-content:center;
+    margin: 30px;
+}
+#taskSummary{
+    display: flex;
+    justify-content:space-between;
+}
+#message{
+    font-size: 40px;
+    text-align: center;
+}
 .centertext{
     margin: 20px;
     display: flex;
     align-items: center;
 }
-// new task form
+@media screen and (max-Width:415px){
+    #Dashboard{
+        text-align: center;
+    }
+    #taskSummary{
+        display: block;
+    }
+    #taskSummaryContainer{
+        margin: 10px;
+    }
+    #message{
+        font-size: 30px;
+    }
+    
+}
 

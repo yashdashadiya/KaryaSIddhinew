@@ -1,3 +1,21 @@
-<div>this is task page</div>
-<!-- <app-task-list [TaskList]="list"></app-task-list> -->
+<div id="TaskPage">
+    <div id="myTask">
+        My Tasks
+        <span id="deopdownContainer">
+            <form action="">
+                <select name="" id="selectbox" name="selectbox" [(ngModel)]="taskcompleted">
+                    <option [ngValue]="false" class="selcetOption">Incomplete Tasks </option>
+                    <option [ngValue]="true" class="selcetOption">Completed Tasks </option>
+                </select>
+            </form>
+        </span>
+    </div>
+    
+    <app-task-list [TaskList]="filterByPriority" TaskType="High Priorities" (addNewTask)="AddNewTask($event)"
+        (updateStatus)="updateStatus($event)"></app-task-list>
+    <app-task-list [TaskList]="filterByToday" TaskType="Today's Task" (addNewTask)="AddNewTask($event)"
+        (updateStatus)="updateStatus($event)"></app-task-list>
+    <app-task-list [TaskList]="filterByLater" TaskType="Later task" (addNewTask)="AddNewTask($event)"
+        (updateStatus)="updateStatus($event)"></app-task-list>
+</div>
 <app-footer></app-footer>

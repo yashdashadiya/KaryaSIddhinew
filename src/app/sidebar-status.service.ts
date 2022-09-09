@@ -6,18 +6,18 @@ import { Subject } from 'rxjs';
 })
 export class SideBarStatusService implements OnInit{
 
+  // <-- variables -->
   sideBarStatus?:boolean;
   statusChange: Subject<boolean> = new Subject<boolean>();
 
   constructor() { this.sideBarStatus=true;}
+  
+  // <-- functions -->
+  ngOnInit(): void { 
+  }
 
   changeSidebarStatus(){
     this.sideBarStatus=!this.sideBarStatus;
-    console.log("side bar status is:"+this.sideBarStatus);
     this.statusChange.next(this.sideBarStatus);
   }
-  ngOnInit(): void {
-    
-  }
-  
 }

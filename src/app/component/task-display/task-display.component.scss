@@ -1,27 +1,27 @@
 #tasklist{
-    margin: 20px;
+    margin: 5px;
+    margin-bottom: 15px;
     display: flex;
-    // border: solid 1px black;
     align-items: center;
 }
 #taskdetail{
     margin-left: 10px;
     align-items: center;
-    flex-grow:1;
     display: flex;
+    flex-grow:1;
     justify-content: space-between;
 }
 .checkicon{
     font-size: 40px;
 }
-.completed{
+.pending{
     cursor:context-menu;
     color: rgb(54, 201, 59);
 }
-.panding{
+.completed{
     color: gray;
 }
-.completed:hover{
+.pending:hover{
     cursor: pointer;
     color: rgb(57, 232, 63);
 }
@@ -33,13 +33,58 @@
 }
 .centertext{
     margin: 20px;
-    display: flex;
+    // display: flex;
     align-items: center;
 }
-.icon{
-    margin: 10px;
-    font-size: 40px;
-    color: rgb(54, 201, 59);
-    cursor: pointer;
+.checkCircle{
+    font-size: 24px;
+    display: flex;
+    margin: auto 6px;
+    max-width: fit-content;
+    // width: 10%;
+}
+#taskdetails{
+    width: 80%;
+    display: flex;
+}
+#tasktitle{
+    width: 40%;
+}
+#taskdate{
+    width: 80%;
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#description{
+    width: 60%;
+}
+#taskpriority{
+    width:20%;
+}
+#datepriority{
+    // flex-grow: 1;
+    display: flex;
+    text-align: center;
+    width: 30%;
+    // display: flex;
+}
 
+@media screen and (max-width:750px) {
+    #taskdetails,#datepriority{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #tasktitle{
+        padding-bottom: 10px;
+        width:100%;
+    }
+    #datepriority{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

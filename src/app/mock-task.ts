@@ -14,19 +14,4 @@ export const mockTasks:TaskModel[]=[{
     status:false,
     priority:2,
     description :'Wireframes required to be created in plain CSS & HTML and JavaScript.'
-},
-// {
-//     title:'Reward Kazoo Points ',
-//     dueDate:'27th Aug 2022',
-//     status:true,
-//     priority:3,
-//     description :'Reward Kazoo points for the Jul 2022 townhall’ winners'
-// },
-// {
-//     title:'task2',
-//     dueDate:'today',
-//     status:false,
-//     priority:1,
-//     description :'this is discription 2 of task and bla s cdjcnjdk jfhsd kjfh'
-// },
-]
+}]

@@ -11,11 +11,11 @@
         </span>
     </div>
     
-    <app-task-list [TaskList]="filterByPriority" TaskType="High Priorities" (addNewTask)="AddNewTask($event)"
+    <app-task-list [TaskList]="filterByPriority" TaskHeading="High Priorities" (addNewTask)="AddNewTask($event)"
         (updateStatus)="updateStatus($event)"></app-task-list>
-    <app-task-list [TaskList]="filterByToday" TaskType="Today's Task" (addNewTask)="AddNewTask($event)"
+    <app-task-list [TaskList]="filterByToday" TaskHeading="Today's Task" (addNewTask)="AddNewTask($event)"
         (updateStatus)="updateStatus($event)"></app-task-list>
-    <app-task-list [TaskList]="filterByLater" TaskType="Later task" (addNewTask)="AddNewTask($event)"
+    <app-task-list [TaskList]="filterByLater" TaskHeading="Later task" (addNewTask)="AddNewTask($event)"
         (updateStatus)="updateStatus($event)"></app-task-list>
 </div>
 <app-footer></app-footer>

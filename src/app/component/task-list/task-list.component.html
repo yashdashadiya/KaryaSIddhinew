@@ -1,5 +1,5 @@
 <div id="tasklistcontainer">
-    <div class="centertext">{{TaskType}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
+    <div class="centertext">{{TaskHeading}}<span class="material-icons icon" (click)="openTaskPage()">add_task</span></div>
     <div *ngFor="let task of TaskList" id="tasklist">
         <app-task-display [task]="task" (markAsCompleteEvent)="markAsComplete(task.id)"></app-task-display>
     </div>

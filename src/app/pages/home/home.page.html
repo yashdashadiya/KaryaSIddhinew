@@ -6,8 +6,12 @@
     <div id="taskSummaryContainer">
         <div id="taskSummary">
             <div class="centertext">
-                <span>This Week</span>
-                <span class="material-icons">arrow_drop_down</span>
+                <select name="" id="selectbox" name="selectbox">
+                    <option class="selcetOption">This Week</option>
+                    <option class="selcetOption">This Month</option>
+                </select>
+                <!-- <span>This Week</span>
+                <span class="material-icons">arrow_drop_down</span> -->
             </div>
             <div class="centertext">
                 <span class="material-icons completed">check_circle_outline</span>
@@ -25,7 +29,7 @@
     <div style="margin-top:50px;">
 
     </div>
-    <app-task-list [TaskList]="filterByStatus" TaskType="My Priorities (next 3 days – high priority)"
+    <app-task-list [TaskList]="filterByStatus" TaskHeading=   "My Priorities (next 3 days – high priority)"
         (addNewTask)="AddNewTask($event)" (updateStatus)="updateStatus($event)"></app-task-list>
 </div>
 <app-footer></app-footer>

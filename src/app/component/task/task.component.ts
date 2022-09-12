@@ -3,8 +3,8 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-task-display',
-  templateUrl: './task-display.component.html',
-  styleUrls: ['./task-display.component.scss']
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.scss']
 })
 export class TaskDisplayComponent implements OnInit {
 

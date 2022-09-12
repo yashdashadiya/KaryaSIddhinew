@@ -23,8 +23,18 @@
 .centertext{
     margin: 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
+#selectbox{
+    font-size: medium;
+    padding: 10px;
+    border: none;
+}
+#selectbox:focus{
+    outline: none;
+}
+
 @media screen and (max-Width:415px){
     #Dashboard{
         text-align: center;

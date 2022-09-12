@@ -9,7 +9,7 @@ import { TaskModel } from 'src/app/model/task';
 })
 export class TaskListComponent implements OnInit {
   // <-- inputs and outputs -->
-  @Input() TaskType?: String;
+  @Input() TaskHeading?: String;
   @Input() TaskList?: TaskModel[];
   @Output() addNewTask: EventEmitter<any> = new EventEmitter<any>();
   @Output() updateStatus: EventEmitter<any> = new EventEmitter<any>();

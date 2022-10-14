@@ -15,7 +15,23 @@ export class TaskServiceService implements OnInit{
   ngOnInit(): void {
   }
 
-  addNewTask(obj:TaskModel){
+  getTaskList():TaskModel[]{
+    return JSON.parse(localStorage.getItem("TaskList")!);
+  }
+  getTotalCompletedTask():string{
+    return localStorage.getItem("totalCompleted")!;
+  }
+  getTotalTaks():string{
+    return localStorage.getItem("TotalTask")!;
+  }
+  postTaskList(tasklist:TaskModel[]){
+    localStorage.setItem("TaskList", JSON.stringify(tasklist));
+  }
+  postTotalCompleted(totalCompleted:string){
+    localStorage.setItem("totalCompleted", totalCompleted);
+  }
+  
+  postNewTask(obj:TaskModel){
     obj.id = parseInt(localStorage.getItem("TotalTask")!);
     localStorage.setItem("TotalTask",(parseInt(localStorage.getItem("TotalTask")!)+1).toString())
     this.taskList.push(obj);

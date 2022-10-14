@@ -20,10 +20,10 @@ export class TaskListComponent implements OnInit {
   taskDescription?: String;
   taskDue?: Date;
   taskPriority?: number;
-  mockTasks = mockTasks;
 
   // <-- constructor -->
   constructor() {
+
   }
 
   //<-- functions -->

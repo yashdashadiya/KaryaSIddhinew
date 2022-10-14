@@ -3,6 +3,9 @@
     <div *ngFor="let task of TaskList" id="tasklist">
         <app-task-display [task]="task" (markAsCompleteEvent)="markAsComplete(task.id)"></app-task-display>
     </div>
+    <!-- <div *ngIf="noTask" id="notask">
+        No Task
+    </div> -->
 </div>
 
 

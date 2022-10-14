@@ -11,9 +11,9 @@ import { TaskServiceService } from 'src/app/task-service.service';
 export class TaskPage implements OnInit {
 
   // <-- variables -->
-  list: TaskModel[] = JSON.parse(localStorage.getItem("TaskList")!);
-  totalTaks = localStorage.getItem("TotalTask");
-  totalCompletedTask = localStorage.getItem("totalCompleted");
+  list: TaskModel[] = this.TaskServiceService.getTaskList();
+  totalTaks = this.TaskServiceService.getTotalTaks();
+  totalCompletedTask = this.TaskServiceService.getTotalCompletedTask();
   pipeline = new DatePipe('en-US');
   today: Date = new Date();
   taskcompleted: boolean = false;
@@ -28,7 +28,7 @@ export class TaskPage implements OnInit {
   }
 
   AddNewTask($event: any): void {
-    this.TaskServiceService.addNewTask($event);
+    this.TaskServiceService.postNewTask($event);
     this.list.push($event);
   }
 
@@ -36,9 +36,11 @@ export class TaskPage implements OnInit {
     for (let i = 0; i < this.list.length; i++) {
       if (id == this.list[i].id) {
         this.list[i].status = false;
-        localStorage.setItem("TaskList", JSON.stringify(this.list));
+        this.TaskServiceService.postTaskList(this.list);
+        // localStorage.setItem("TaskList", JSON.stringify(this.list));
         this.totalCompletedTask = (parseInt(this.totalCompletedTask!) + 1).toString();
-        localStorage.setItem("totalCompleted", this.totalCompletedTask);
+        this.TaskServiceService.postTotalCompleted(this.totalCompletedTask);
+        // localStorage.setItem("totalCompleted", this.totalCompletedTask);
         break;
       }
     }

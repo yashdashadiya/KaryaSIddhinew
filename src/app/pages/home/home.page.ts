@@ -14,9 +14,9 @@ export class HomePage implements OnInit {
   @Input() sideBarStatus?: boolean;
 
   // <-- variables -->
-  totalTaks = localStorage.getItem("TotalTask");
-  totalCompletedTask = localStorage.getItem("totalCompleted");
-  list: TaskModel[] = JSON.parse(localStorage.getItem("TaskList")!);
+  totalTaks = this.TaskServiceService.getTotalTaks();
+  totalCompletedTask = this.TaskServiceService.getTotalCompletedTask();
+  list: TaskModel[] = this.TaskServiceService.getTaskList();
   dateToday: number = Date.now();
   message: String = '';
 
@@ -45,18 +45,20 @@ export class HomePage implements OnInit {
   }
 
   AddNewTask($event: any): void {
-    this.TaskServiceService.addNewTask($event);
+    this.TaskServiceService.postNewTask($event);
     this.list.push($event);
-    this.totalTaks = localStorage.getItem("TotalTask");
+    this.totalTaks = this.TaskServiceService.getTotalTaks();
   }
 
   updateStatus(id: any) {
     for (let i = 0; i < this.list.length; i++) {
       if (id == this.list[i].id) {
         this.list[i].status = false;
-        localStorage.setItem("TaskList", JSON.stringify(this.list));
+        this.TaskServiceService.postTaskList(this.list);
+        // localStorage.setItem("TaskList", JSON.stringify(this.list));
         this.totalCompletedTask = (parseInt(this.totalCompletedTask!) + 1).toString();
-        localStorage.setItem("totalCompleted", this.totalCompletedTask);
+        this.TaskServiceService.postTotalCompleted(this.totalCompletedTask);
+        // localStorage.setItem("totalCompleted", this.totalCompletedTask);
         break;
       }
     }
